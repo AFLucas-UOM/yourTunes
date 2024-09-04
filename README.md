@@ -1,38 +1,58 @@
 # yourTunes - An Emotion-Driven Music Player
 
-## What is this?
+## Introduction
 
-Assigned as the project for the ICS2000 unit, yourTunes is a javascript based web application, hosted through flask able to indentify a user's emotion and play relevant music.
+**yourTunes** is a JavaScript-based web application developed for the ICS2000 unit project. It uses Flask to host a music player that identifies a user's emotions through their webcam feed and plays music that matches their current mood.
 
-Feel free to learn more through the demo video below:
+## Demo Video
+
 [![Watch the video](githubAssets/demo_thumbnail.png)](https://drive.google.com/file/d/17R6D93Y_82Nl0nTm9jW49_mV0Ejs7geW/view?usp=sharing)
 
-### How does it work?
+## How It Works
 
-yourTunes makes use of your webcam feed to find faces through the Viola-Jones method. This is done using OpenCV.js and the OpenCV default front facial haar-cascade. Once a face has been found it is cropped out of the video frame, converted to greyscale and resized to 224x224 pixels. This cropped face is then passed through a TensorFlow image classification model trained through Teachable machine which is capable of identifying different emotions on faces. This produces a set of 7 confidence scores, one for each emotion the model was trained on (Happy, Sad, Angry, Disgust, Fear, Surprise and Neutral). These confidence values are summed and the emotion with the highest value over a period of time is the chosen emotion. The site then prompts the user with a song depending on the selected emotion.
+yourTunes utilizes the Viola-Jones method for face detection via the OpenCV.js library, using a Haar-cascade for front facial detection. The detected face is cropped, converted to grayscale, and resized to 224x224 pixels. This image is then analyzed by a TensorFlow model, trained using Teachable Machine, which classifies the face into one of seven emotions: Happy, Sad, Angry, Disgust, Fear, Surprise, and Neutral. The emotion with the highest confidence score is selected, and the application plays a corresponding song based on this emotion.
 
+## Usage
 
-### How do I use it?
-To use yourTunes the page must first be hosted, this can be done by simply running the flask-app.py script. Once this has been done
-the page can be accessed by going to http://localhost:5000/  
-Enjoy!
+To get started with yourTunes:
 
+1. Ensure you have Python and Flask installed on your system.
+2. Run the `flask-app.py` script to host the application:
+   ```bash
+   python flask-app.py
+   ```
+3. Access the application by navigating to `http://localhost:5000/` in your web browser.
+4. Enjoy your personalized music experience!
 
-## Useful GAPT Proposal Information:
-### Title
-Emotion-driven music player: a hands-on computer vision,  
-machine learning and human-computer interaction project
- 
-### Short Description of Task
-The aim of this project involves the creation of a music 
-player capable of selecting songs according to the user's present emotional state, as 
-determined by their facial expressions. This endeavor offers students the chance to 
-delve into computer vision, machine learning, and human-computer interaction, all 
-while tackling a practical problem and its real-world application. Throughout the 
-project, open-source tools and publicly available datasets will be used. 
- 
-### Deliverables
-1) A web-based application,  
-2) A report describing your approach and your findings,  
-3) a short demo video
- 
+## Getting Started
+
+### Prerequisites
+
+- Python 3.x
+- Python libraries: `Flask`, `render_template`, `send_from_directory`, `request`, `abort`, `jsonify`, `os`, `json`
+
+### Installation
+
+Clone the repository:
+   ```bash
+   git clone https://github.com/AFLucas-UOM/yourTunes.git
+  ```
+
+## Spotify Integration
+To listen to full songs, a Spotify Premium account is required. The application uses Spotify’s API to play tracks, which requires a Premium subscription for full-length playback. Users with a free Spotify account will only have access to previews or snippets of the songs.
+
+## Contributions
+
+Contributions to enhance the application or add new features are welcome! Please fork the repository, make your changes, and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+This project was developed as part of an academic assignment. Unit: CPS2000 at the University of Malta.
+
+## Contact
+
+For any inquiries or feedback, please contact [Andrea Filiberto Lucas](mailto:andrealucasmalta@gmail.com).
