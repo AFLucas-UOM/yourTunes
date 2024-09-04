@@ -24,6 +24,9 @@ To get started with yourTunes:
 3. Access the application by navigating to `http://localhost:5000/` in your web browser.
 4. Enjoy your personalized music experience!
 
+## Spotify Integration
+The application uses Spotify’s API to play tracks, which **requires a Premium subscription** for full-length playback. Users with a free Spotify account will only have access to previews or snippets of the songs. [Upgrade to Spotify Premium](https://www.spotify.com/premium/) to enjoy unlimited access to full tracks.
+
 ## Getting Started
 
 ### Prerequisites
@@ -37,9 +40,6 @@ Clone the repository:
    ```bash
    git clone https://github.com/AFLucas-UOM/yourTunes.git
   ```
-
-## Spotify Integration
-To listen to full songs, a Spotify Premium account is required. The application uses Spotify’s API to play tracks, which requires a Premium subscription for full-length playback. Users with a free Spotify account will only have access to previews or snippets of the songs.
 
 ## Contributions
 
